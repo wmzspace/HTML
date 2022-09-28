@@ -1,0 +1,27 @@
+@import "login2.css";
+/*a {
+    background-color: gray;!important;
+    color: blue;
+    font-size: 10px;
+}*/
+
+code{
+    font-weight: bold;
+}
+
+.class2 {
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    margin: 2px;
+}
+.class1 {
+    font-size: x-large;
+}
+
+#username{
+    width: 100px;
+}
+#password{
+    width: 100px;
+}
