@@ -1,0 +1,7 @@
+<application>
+  <component name="GithubAccounts">
+    <account name="wmzspace" id="14bab6ea-a8b7-4211-b2ce-5ebfd605943a">
+      <server host="github.com" />
+    </account>
+  </component>
+</application>
