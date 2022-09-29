@@ -1,3 +1,1 @@
-/*
-document.write("<br>HelloWorld");
-*/
+document.getElementById("test").innerText = "Have a good time";
