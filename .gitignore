@@ -428,3 +428,4 @@ MigrationBackup/
 .ionide/
 
 .vscode
+*.xml
