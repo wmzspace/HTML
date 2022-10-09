@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" http-equiv="refresh">
+    <title>Test</title>
+    <style>
+        .card {
+            border: solid thick red;
+            margin: 10px 10px 10px 10px;
+        }
+
+        .middle {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        tr > th {
+            background-color: gray;
+            color: while;
+        }
+        tr > th:only-of-type{
+            background-color: lightgray;
+            color:gray;
+        }
+
+
+    </style>
+</head>
+
+<tr>
+    <script>
+        var db = openDatabase('mysql', '1.0', 'Test DB', 2 * 1024 * 1024);
+    </script>
+    <h1>Card Test</h1>
+    <hr>
+    <figure class="middle">
+        <figcaption>HTML style</figcaption>
+        <div class="card">
+            <p>1<small><sup>st</sup></small> Line.</p>
+            <p>2<small><sup>nd</sup></small> Line.</p>
+            <p>3<small><sup>rd</sup></small> Line.</p>
+            <p>4<small><sup>th</sup></small> Line.</p>
+            <p>5<small><sup>th</sup></small> Line.</p>
+        </div>
+    </figure>
+    <hr>
+
+    <pre><script src="temp.js"></script></pre>
+    <figure class="middle">
+        <figcaption>HTML STYLE</figcaption>
+        <table class="middle">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>ID</th>
+            </tr>
+            <tr>
+                <th>A</th>
+                <td>Alice</td>
+                <td>001</td>
+            </tr>
+    
+            <tr>
+                <th>B</th>
+                <td>Bob</td>
+                <td>002</td>
+            </tr>
+    
+            <tr>
+                <th>C</th>
+                <td>Candy</td>
+                <td>003</td>
+            </tr>
+    
+        </table>
+    </figure>
+    
+    </body>
+
+</html>
