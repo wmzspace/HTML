@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -13,72 +12,119 @@
             margin: 10px 10px 10px 10px;
         }
 
+        .card>p::after {
+            content: " Line.";
+        }
+
         .middle {
             text-align: center;
             font-size: x-large;
         }
 
-        tr>th {
+        thead th,
+        tfoot th {
             background-color: gray;
-            color: while;
+            color: white;
         }
 
-        tr>th:only-of-type {
+        [colspan] {
+            font-weight: bold;
+            background-color: lightgray;
+            border: medium solid darkgray;
+        }
+
+        tbody th:only-of-type {
             background-color: lightgray;
             color: gray;
         }
 
+
         table {
             margin-top: 10px;
+        }
+
+        hr {
+            margin: 20px 50px;
+        }
+
+        caption {
+            margin-bottom: 10px;
+        }
+
+        #None {
+            background-color: white;
+        }
+
+        #colgroup-grades {
+            background-color: yellow;
         }
     </style>
 </head>
 
-<tr>
-    <h1>Card Test</h1>
+<body>
+
+    <h1 style="margin-left:48px">Card Test</h1>
     <hr>
     <figure class="middle">
         <figcaption>HTML style</figcaption>
         <div class="card">
-            <p>1<small><sup>st</sup></small> Line.</p>
-            <p>2<small><sup>nd</sup></small> Line.</p>
-            <p>3<small><sup>rd</sup></small> Line.</p>
-            <p>4<small><sup>th</sup></small> Line.</p>
-            <p>5<small><sup>th</sup></small> Line.</p>
+            <p>1<small><sup>st</sup></small></p>
+            <p>2<small><sup>nd</sup></small></p>
+            <p>3<small><sup>rd</sup></small></p>
+            <p>4<small><sup>th</sup></small></p>
+            <p>5<small><sup>th</sup></small></p>
         </div>
     </figure>
     <hr>
 
     <pre><script src="temp.js"></script></pre>
-    <figure class="middle">
-        <figcaption>HTML STYLE</figcaption>
-        <table align="center" border="1">
+    <hr>
+
+    <table align="center" border="1" class="middle">
+        <colgroup id="colgroup-grades">
+            <col span="2" id="None">
+            <col id="colgroup-grades" span="2">
+        </colgroup>
+        <caption>HTML style</caption>
+        <thead>
             <tr>
-                <th></th>
+                <th style="color:darkgrey">Tag</th>
+                <th>Class</th>
                 <th>Name</th>
-                <th>ID</th>
+                <th>Grades</th>
             </tr>
+        </thead>
+
+        <tbody>
             <tr>
-                <th>A</th>
+                <th>Stu A</th>
+                <td>1</td>
                 <td>Alice</td>
-                <td>001</td>
+                <td>90</td>
             </tr>
-
             <tr>
-                <th>B</th>
-                <td>Bob</td>
-                <td>002</td>
-            </tr>
-
-            <tr>
-                <th>C</th>
+                <th>Stu B</th>
+                <td rowspan="2">2</td>
                 <td>Candy</td>
-                <td>003</td>
+                <td>80</td>
             </tr>
 
-        </table>
-    </figure>
+            <tr>
+                <th>Stu C</th>
+                <td>Bob</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th style="color:darkgrey">Avg</th>
+            <td colspan="3">90</td>
+        </tfoot>
+    </table>
 
-    </body>
+    <hr>
+
+
+
+</body>
 
 </html>
