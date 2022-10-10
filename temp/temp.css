@@ -12,6 +12,18 @@
     font-size: x-large;
 }
 
+header > nav{
+    border: thin dashed black;
+    text-align: center;
+    margin: 0 50px;
+}
+
+footer {
+    border: thin dashed black;
+    text-align: center;
+    margin: 0 50px;
+}
+
 h1 {
     margin-left: 48px;
 }
