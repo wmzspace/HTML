@@ -1,0 +1,60 @@
+.card {
+    border: solid thick red;
+    margin: 10px 10px 10px 10px;
+}
+
+.card>p::after {
+    content: " Line.";
+}
+
+.middle {
+    text-align: center;
+    font-size: x-large;
+}
+
+h1 {
+    margin-left: 48px;
+}
+
+thead th,
+tfoot th {
+    background-color: gray;
+    color: white;
+}
+
+[colspan] {
+    font-weight: bold;
+    background-color: lightgray;
+    border: medium solid darkgray;
+}
+
+tbody th:only-of-type {
+    background-color: lightgray;
+    color: gray;
+}
+
+
+table {
+    margin-top: 10px;
+}
+
+hr {
+    margin: 20px 50px;
+}
+
+caption {
+    margin-bottom: 10px;
+}
+
+#None {
+    background-color: white;
+}
+
+#tag,
+#avg {
+    color: darkgrey;
+}
+
+#colgroup-grades {
+    background-color: yellow;
+}

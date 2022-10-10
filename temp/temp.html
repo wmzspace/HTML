@@ -5,65 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="refresh">
+    <link rel="stylesheet" type="text/css" href="temp.css">
     <title>Test</title>
-    <style>
-        .card {
-            border: solid thick red;
-            margin: 10px 10px 10px 10px;
-        }
 
-        .card>p::after {
-            content: " Line.";
-        }
-
-        .middle {
-            text-align: center;
-            font-size: x-large;
-        }
-
-        thead th,
-        tfoot th {
-            background-color: gray;
-            color: white;
-        }
-
-        [colspan] {
-            font-weight: bold;
-            background-color: lightgray;
-            border: medium solid darkgray;
-        }
-
-        tbody th:only-of-type {
-            background-color: lightgray;
-            color: gray;
-        }
-
-
-        table {
-            margin-top: 10px;
-        }
-
-        hr {
-            margin: 20px 50px;
-        }
-
-        caption {
-            margin-bottom: 10px;
-        }
-
-        #None {
-            background-color: white;
-        }
-
-        #colgroup-grades {
-            background-color: yellow;
-        }
-    </style>
 </head>
 
 <body>
 
-    <h1 style="margin-left:48px">Card Test</h1>
+    <h1>Card Test</h1>
     <hr>
     <figure class="middle">
         <figcaption>HTML style</figcaption>
@@ -83,12 +32,12 @@
     <table align="center" border="1" class="middle">
         <colgroup id="colgroup-grades">
             <col span="2" id="None">
-            <col id="colgroup-grades" span="2">
+            <col span="2">
         </colgroup>
         <caption>HTML style</caption>
         <thead>
             <tr>
-                <th style="color:darkgrey">Tag</th>
+                <th id="tag">Tag</th>
                 <th>Class</th>
                 <th>Name</th>
                 <th>Grades</th>
@@ -116,7 +65,7 @@
             </tr>
         </tbody>
         <tfoot>
-            <th style="color:darkgrey">Avg</th>
+            <th id="avg">Avg</th>
             <td colspan="3">90</td>
         </tfoot>
     </table>
