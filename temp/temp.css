@@ -1,3 +1,5 @@
+@import "formtest.css";
+
 .card {
     border: solid thick red;
     margin: 10px 10px 10px 10px;

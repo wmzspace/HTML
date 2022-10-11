@@ -1,4 +1,4 @@
-@import "login2.css";
+
 /*a {
     background-color: gray;!important;
     color: blue;
@@ -24,4 +24,10 @@ code{
 }
 #password{
     width: 100px;
+}
+span {
+    border: thin black solid;
+    background-color: gold;
+    padding:10px;
+
 }
