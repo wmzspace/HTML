@@ -1,40 +1,40 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <!--<base href="">--><!--修改根目录-->
     <link rel="stylesheet" type="text/css" href="login.css">
+    <meta name="viewport" content="width=device-width">
     <link rel="prefetch" href="main.html">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8" http-equiv="refresh" content="60">
-    <style media="screen AND (min-width:300px)">
+    <style>
         a {
             color: red;
             padding: 0.5em;
+            content: "Please zoom in to continue";
         }
     </style>
-    <style media="screen AND (max-width:300px)">
+    <!-- <style media="screen AND (max-width:500px)">
         a {
             color: green;
             font-style: italic;
         }
-    </style>
+    </style> -->
     <title>
         Title
     </title>
 </head>
 <body>
-<form>
+<form target="_blank" method="post" action="">
     <h1>Login Page</h1>
     <span>输入账号密码登陆系统</span><br><br>
-    <label><code>username:</code> <input id="username" type="text" name="username" accesskey="u"></label>
-    <!--<i style="line-height: 2.4">username:</i>
-    <p contenteditable="true" style="display: inline;border-style: solid">guest</p>-->
+    <label for="username"><code>username:</code> <input id="username" type="text" name="username" autofocus required></label>
     <br>
-    <label><code>password:</code> <input id="password" type="password" name="password" accesskey="p"></label>
+    <label for="password"><code>password:</code> <input id="password" type="password" name="password" required ></label>
     <br>
     <label><input type="button" value="Log in" accesskey="s" onclick='location.href=("main.html")'></label>
     <a href="main.html"> 直接进入 </a>
-    <script type="text/javascript" src="login.js"></script>
+    
 </form>
 </body>
 </html>
