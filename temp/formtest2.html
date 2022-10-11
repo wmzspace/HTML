@@ -2,53 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <style>
-        .class2 {
-            background-color: gray;
-            color: white;
-            padding: 5px;
-            /*margin:2px;*/
-            font-size: x-large;
-        }
-
-        .class1 {
-            font-size: x-large;
-        }
-
-        header {
-            text-align: right;
-            margin: 30px 0;
-        }
-
-        header>img {
-            float: left
-        }
-
-        body {
-            margin: 0 100px;
-        }
-
-        code {
-            font-weight: bold;
-        }
-
-        #footer {
-            background-color: rgb(0, 255, 174);
-            clear: both;
-            text-align: center;
-            font-size: 1px;
-            width: 30%;
-            margin: 20px auto;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="temp.css">
     <title>Title</title>
 </head>
 
 <body>
-    <header>
-        <img src="pic.jpg" width="50px" alt="">
+    <header id="formheader">
+        <img src="pic.jpg" width="50px" alt="" id="pic">
         <a href="formtest.html" id="last"> <abbr title="退出账户并返回登陆界面">
                 <ruby>注销
                     <rp>(</rp>
@@ -56,6 +18,7 @@
                     <rp>)</rp>
                 </ruby>
             </abbr><br> </a>
+
     </header>
     <p class="class2" id="test">Welcome!</p>
     <p>A visual C Program</p>
@@ -93,10 +56,11 @@ int main(){
     return 0;
 }
     </code></pre>
+    <div id="footer"></div>
 
-    <div id="footer">
-        版权 © wmzspace.space
-    </div>
+    <footer>
+        <small><i>版权 &#169;wmzspace.space</i></small>
+    </footer>
 
 
 

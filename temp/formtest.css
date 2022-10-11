@@ -1,12 +1,18 @@
-
 /*a {
     background-color: gray;!important;
     color: blue;
     font-size: 10px;
 }*/
 
-code{
+code {
     font-weight: bold;
+}
+
+#formheader {
+
+    text-align: right;
+    margin: 30px 0;
+
 }
 
 .class2 {
@@ -15,19 +21,27 @@ code{
     padding: 5px;
     margin: 2px;
 }
+
 .class1 {
     font-size: x-large;
 }
 
-#username{
+#username,
+#password {
     width: 100px;
 }
-#password{
-    width: 100px;
+
+#direct {
+    padding: 0.5em;
 }
+
+#pic {
+    float: left;
+}
+
 span {
     border: thin black solid;
     background-color: gold;
-    padding:10px;
+    padding: 10px;
 
 }
