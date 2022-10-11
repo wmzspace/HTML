@@ -16,8 +16,8 @@ code {
 }
 
 fieldset{
-    border: dashed;
-    margin: 0 100px;
+    border: dashed; 
+    /* margin: 0 100px; */
 }
 
 .class2 {

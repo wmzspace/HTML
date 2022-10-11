@@ -31,18 +31,23 @@
         <fieldset>
             <legend>Login Card</legend>
             <label for="username"><code>username:</code> <input id="username" type="text" name="username" autofocus
-                    required></label>
+                    required placeholder="Enter your username" size="20" maxlength="50" max="20"></label>
 
             <small><i> Not have an account yet? Click <a href="login.html">here</a> to sign up.</i></small>
             <br>
-            <label for="password"><code>password:</code> <input id="password" type="password" name="password"
-                    required></label>
-            
+            <label for="password"><code>password:</code> <input id="password" type="password" name="password" required
+                    placeholder="Enter your password"></label>
+
             <small><i><a href="">do not remember</a></i></small>
             <br>
 
             <!-- <a href="formtest2.html" id="direct"> Enter as a guest</a> -->
-            <label><input type="submit" value="Log in"></label><br>
+            <!-- <label><input type="submit" value="Log in"></label><br> -->
+            <label for="agreement"><input type="checkbox" id="agreement" name="agreement">I accept the
+                agreement.</label>
+            <br>
+            <button type="submit">Log in</button>
+
         </fieldset>
     </form>
     <footer>
