@@ -15,6 +15,11 @@ code {
 
 }
 
+fieldset{
+    border: dashed;
+    margin: 0 100px;
+}
+
 .class2 {
     background-color: gray;
     color: white;
@@ -29,10 +34,6 @@ code {
 #username,
 #password {
     width: 100px;
-}
-
-#direct {
-    padding: 0.5em;
 }
 
 #pic {

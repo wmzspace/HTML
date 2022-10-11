@@ -26,16 +26,24 @@
         <hr>
     </header>
     <form target="_blank" method="" action="formtest2.html">
-        <h1>Login Page</h1>
-        <span>输入账号密码登陆系统</span><br><br>
-        <label for="username"><code>username:</code> <input id="username" type="text" name="username" autofocus
-                required></label>
-        <br>
-        <label for="password"><code>password:</code> <input id="password" type="password" name="password"
-                required></label>
-        <br>
-        <label><input type="submit" value="Log in"></label>
-        <a href="formtest2.html" id="direct"> 直接进入 </a>
+        <!-- <h1>Login Page</h1> -->
+        <!-- <span>输入账号密码登陆系统</span><br><br> -->
+        <fieldset>
+            <legend>Login Card</legend>
+            <label for="username"><code>username:</code> <input id="username" type="text" name="username" autofocus
+                    required></label>
+
+            <small><i> Not have an account yet? Click <a href="login.html">here</a> to sign up.</i></small>
+            <br>
+            <label for="password"><code>password:</code> <input id="password" type="password" name="password"
+                    required></label>
+            
+            <small><i><a href="">do not remember</a></i></small>
+            <br>
+
+            <!-- <a href="formtest2.html" id="direct"> Enter as a guest</a> -->
+            <label><input type="submit" value="Log in"></label><br>
+        </fieldset>
     </form>
     <footer>
         <small><i>版权 &#169;wmzspace.space</i></small>
