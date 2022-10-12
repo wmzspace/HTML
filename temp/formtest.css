@@ -31,10 +31,7 @@ fieldset{
     font-size: x-large;
 }
 
-#username,
-#password {
-    width: 100px;
-}
+
 
 #pic {
     float: left;
