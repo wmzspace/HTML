@@ -477,5 +477,4 @@ FodyWeavers.xsd
 
 *.xml 
 .vscode/tasks.json
-test.js
 .vscode/launch.json
