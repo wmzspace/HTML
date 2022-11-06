@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test</title>
+
+    <script>
+
+        function println(content) {
+            document.writeln(content);
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <pre><script defer id="child">
+            println("Charset: " + document.charset);
+            println("Compat Mode: " + document.compatMode);
+            document.write("URL: " + document.location.protocol + document.location.hostname + document.location.port + document.location.pathname);
+            println(document.location.search + document.location.hash);
+            println("URL(location): "+document.location);
+        </script></pre>
+        <!-- <script delay>
+            var child = document.getElementById('child');//  获取子元素
+            var parent = document.createElement('pre');//  新建父元素
+            parent.className = 'parent';
+            child.parentNode.replaceChild(parent, child);//  获取子元素原来的父元素并将新父元素代替子元素
+            parent.appendChild(child);//  在新父元素下添加原来的子元素
+        </script> -->
+
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+        <pre><script>
+            // document.writeln("<pre>")
+            println("Last Modified: " + document.lastModified);
+            // document.write("</pre>")
+        </script>
+        </pre>
+    </footer>
+
+    <pre><script>
+        // var js = document.getElementsByName("script");
+        var pre = document.createElement("pre");
+        var js = document.getElementsByTagName("script");
+        // document.writeln(js.length);
+        try {
+            for (let i = 0; i < js.length; i++) {
+                println(js[i].parentElement.tagName.toLocaleLowerCase());
+            }
+            println("\nFinish!");
+        } catch (e) {
+            // document.writeln(e);
+            println(e);
+        }
+        for(i in range(10)):js
+    </script></pre>
+
+
+
+</body>
+
+</html>
