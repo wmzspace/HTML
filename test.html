@@ -7,13 +7,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Test</title>
-
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+    </style>
     <script>
 
         function println(content) {
             document.writeln(content);
         }
-
 
     </script>
 
@@ -44,40 +47,47 @@
 
     <main>
         <button id="toEnd" type="button">Nav To End</button>
-        <p id="cookiedata">
-            <!-- Cookie: -->
-        </p>
+        <div style="min-height: 150px;background-color: antiquewhite;" id="cookiedata"></div>
         <button id="write" type="button">Add Cookie</button>
         <button id="update" type="button">Update Cookie</button>
         <button id="reset" type="button">Reset Cookies</button>
         <script>
             var cookieCount = 0;
-            document.getElementById("write").onclick=createCookie;
-            document.getElementById("update").onclick=updateCookie;
-            document.getElementById("reset").onclick=resetCookies;
+            document.getElementById("write").onclick = createCookie;
+            document.getElementById("update").onclick = updateCookie;
+            document.getElementById("reset").onclick = resetCookies;
             readCookies();
 
-            function readCookies(){
-                document.getElementById("cookiedata").innerHTML=document.cookie;
+            function readCookies() {
+                document.getElementById("cookiedata").innerHTML = document.cookie;
             }
 
-            function createCookie(){
-                cookieCount++;
-                // document.cookie='Cookie_' + cookieCount + '=Value_' + cookieCount;
-                // document.cookie="Cookie_ "+cookieCount+" =Value_;max-age=2";
-                document.cookie="Cookie_ '"+cookieCount+"'=Value_;max-age=2";
-                readCookies();
+            function createCookie() {
+                var times=prompt("Input add how many cookies:");
+                if(!times)return;
+                for(let i=0;i<times;i++){
+                    cookieCount++;
+                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount + ";max-age=2";
+                    readCookies();
+                }
+                document.location.hash="cookiedata";
             }
 
-            function updateCookie(){
+            function updateCookie() {
                 // document.cookie="Cookie_" + cookieCount+ "=Updated_" + cookieCount;
                 readCookies();
             }
 
-            function resetCookies(){
-                document.cookie="";
+            function resetCookies() {
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (keys) {
+                    for (var i = keys.length; i--;)
+                        document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+                }
+                cookieCount=0;
                 readCookies();
             }
+
         </script>
 
         <pre><script>
@@ -85,7 +95,9 @@
                 document.location.hash = "end";
                 // How to reload onhashchange?
             }
-            
+
+
+
 
             // var pre = document.createElement("pre");
             // var js = document.getElementsByTagName("script");
