@@ -13,6 +13,8 @@
         function println(content) {
             document.writeln(content);
         }
+
+
     </script>
 
 </head>
@@ -22,9 +24,13 @@
         <pre><script defer id="child">
             println("Charset: " + document.charset);
             println("Compat Mode: " + document.compatMode);
-            document.write("URL: " + document.location.protocol + document.location.hostname + document.location.port + document.location.pathname);
-            println(document.location.search + document.location.hash);
-            println("URL(location): "+document.location);
+            println("Protocol: " + document.location.protocol);
+            println("Hostname: " + document.location.hostname);
+            println("Port: " + document.location.port);
+            println("Pathname: " + document.location.pathname);
+            println("Search: " + document.location.search);
+            println("Hash: " + document.location.hash);
+            println("URL(location): " + document.location);
         </script></pre>
         <!-- <script delay>
             var child = document.getElementById('child');//  获取子元素
@@ -37,10 +43,69 @@
     </header>
 
     <main>
+        <button id="toEnd" type="button">Nav To End</button>
+        <p id="cookiedata">
+            <!-- Cookie: -->
+        </p>
+        <button id="write" type="button">Add Cookie</button>
+        <button id="update" type="button">Update Cookie</button>
+        <button id="reset" type="button">Reset Cookies</button>
+        <script>
+            var cookieCount = 0;
+            document.getElementById("write").onclick=createCookie;
+            document.getElementById("update").onclick=updateCookie;
+            document.getElementById("reset").onclick=resetCookies;
+            readCookies();
+
+            function readCookies(){
+                document.getElementById("cookiedata").innerHTML=document.cookie;
+            }
+
+            function createCookie(){
+                cookieCount++;
+                // document.cookie='Cookie_' + cookieCount + '=Value_' + cookieCount;
+                // document.cookie="Cookie_ "+cookieCount+" =Value_;max-age=2";
+                document.cookie="Cookie_ '"+cookieCount+"'=Value_;max-age=2";
+                readCookies();
+            }
+
+            function updateCookie(){
+                // document.cookie="Cookie_" + cookieCount+ "=Updated_" + cookieCount;
+                readCookies();
+            }
+
+            function resetCookies(){
+                document.cookie="";
+                readCookies();
+            }
+        </script>
+
+        <pre><script>
+            document.getElementById("toEnd").onclick = function () {
+                document.location.hash = "end";
+                // How to reload onhashchange?
+            }
+            
+
+            // var pre = document.createElement("pre");
+            // var js = document.getElementsByTagName("script");
+            // try {
+            //     for (let i = 0; i < js.length; i++) {
+            //         println(js[i].parentElement.tagName.toLocaleLowerCase());
+            //     }
+            //     println("\nFinish!");
+            // } catch (e) {
+            //     println(e);
+            // }
+            for (let i = 1; i <= 100; i++) {
+                println(i);
+            }
+
+        </script></pre>
 
     </main>
 
-    <footer>
+    <footer id="end">
         <pre><script>
             // document.writeln("<pre>")
             println("Last Modified: " + document.lastModified);
@@ -49,24 +114,6 @@
         </pre>
     </footer>
 
-    <pre><script>
-        // var js = document.getElementsByName("script");
-        var pre = document.createElement("pre");
-        var js = document.getElementsByTagName("script");
-        // document.writeln(js.length);
-        try {
-            for (let i = 0; i < js.length; i++) {
-                println(js[i].parentElement.tagName.toLocaleLowerCase());
-            }
-            println("\nFinish!");
-        } catch (e) {
-            // document.writeln(e);
-            println(e);
-        }
-        for(let i=1;i<=100;i++){
-            println(i);
-        }
-    </script></pre>
 
 
 
