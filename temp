@@ -1,0 +1,8 @@
+        
+        <!-- <script delay>
+            var child = document.getElementById('child');//  获取子元素
+            var parent = document.createElement('pre');//  新建父元素
+            parent.className = 'parent';
+            child.parentNode.replaceChild(parent, child);//  获取子元素原来的父元素并将新父元素代替子元素
+            parent.appendChild(child);//  在新父元素下添加原来的子元素
+        </script> -->
