@@ -2,29 +2,70 @@
 <html lang="en">
 
 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Test</title>
-    <style>
-        *{
-            scroll-behavior: smooth;
-        }
-    </style>
     <script>
-
+        var start = new Date();
         function println(content) {
             document.writeln(content);
         }
+        function sleep(time) {
+            for (let sleep_start = Date.now(); Date.now() - sleep_start < time;);
+        }
 
     </script>
+    <style>
+/* 
+        pre:has(>script){
+            border:medium double black;
+        } */
+
+        * {
+            scroll-behavior: smooth;
+            /* overflow-wrap: break-word; */
+        }
+
+        #cookiedata {
+            min-height: 150px;
+            /* background-color: antiquewhite; */
+            border: thin solid black;
+        }
+
+        #readyState{
+            color:red;
+        }
+    </style>
 
 </head>
 
 <body>
     <header>
+        <pre>ReadyState: <b id="readyState">loading...</b></pre>
+        <script>
+            var readyState = document.getElementById("readyState");
+            document.onreadystatechange = function () {
+                if(document.readyState=="interactive"){
+                    let elePre= document.querySelectorAll("pre");
+                    for(let i=0;i<elePre.length;i++)
+                        if(elePre[i].innerText)
+                            elePre[i].style.border="medium double black";
+                }
+                if(document.readyState=="complete") {
+                        readyState.style.color = "green";
+                        var now = new Date();
+                        var dif = now - start;
+                        if (dif >= 100)
+                            readyState.innerHTML = document.readyState + " in " + dif / 1000 + " seconds";
+                        else
+                            readyState.innerHTML = document.readyState + " in " + dif + " ms";
+                }
+                // sleep(1000);
+            }
+        </script>
         <pre><script defer id="child">
+            // println("Process: "+document.readyState);
             println("Charset: " + document.charset);
             println("Compat Mode: " + document.compatMode);
             println("Protocol: " + document.location.protocol);
@@ -34,6 +75,7 @@
             println("Search: " + document.location.search);
             println("Hash: " + document.location.hash);
             println("URL(location): " + document.location);
+
         </script></pre>
         <!-- <script delay>
             var child = document.getElementById('child');//  获取子元素
@@ -47,7 +89,7 @@
 
     <main>
         <button id="toEnd" type="button">Nav To End</button>
-        <div style="min-height: 150px;background-color: antiquewhite;" id="cookiedata"></div>
+        <div id="cookiedata"></div>
         <button id="write" type="button">Add Cookie</button>
         <button id="update" type="button">Update Cookie</button>
         <button id="reset" type="button">Reset Cookies</button>
@@ -63,18 +105,22 @@
             }
 
             function createCookie() {
-                var times=prompt("Input add how many cookies:");
-                if(!times)return;
-                for(let i=0;i<times;i++){
+                var times = prompt("Input add how many cookies:");
+                if (!times) return;
+                for (let i = 0; i < times; i++) {
                     cookieCount++;
-                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount + ";max-age=2";
+                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount;//+ ";max-age=2";
                     readCookies();
                 }
-                document.location.hash="cookiedata";
+                document.location.hash = "cookiedata";
             }
 
             function updateCookie() {
-                // document.cookie="Cookie_" + cookieCount+ "=Updated_" + cookieCount;
+                let num = prompt("Change which cookie (Number):");
+                if (!num) return;
+                let value = prompt("Input value:");
+                if (!value) return;
+                document.cookie = "Cookie_" + num + "=" + value;
                 readCookies();
             }
 
@@ -84,7 +130,7 @@
                     for (var i = keys.length; i--;)
                         document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
                 }
-                cookieCount=0;
+                cookieCount = 0;
                 readCookies();
             }
 
@@ -95,24 +141,6 @@
                 document.location.hash = "end";
                 // How to reload onhashchange?
             }
-
-
-
-
-            // var pre = document.createElement("pre");
-            // var js = document.getElementsByTagName("script");
-            // try {
-            //     for (let i = 0; i < js.length; i++) {
-            //         println(js[i].parentElement.tagName.toLocaleLowerCase());
-            //     }
-            //     println("\nFinish!");
-            // } catch (e) {
-            //     println(e);
-            // }
-            for (let i = 1; i <= 100; i++) {
-                println(i);
-            }
-
         </script></pre>
 
     </main>
