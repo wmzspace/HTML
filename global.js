@@ -36,7 +36,7 @@ function generate_nav() {
     html = {
         'docinfo.html': "Document Information",
         'cookie.html': "Cookie Test",
-        'domnav.html':"DOM Navigation",
+        'domnav.html': "DOM Navigation",
     }
     var nav = document.getElementById("html_nav");
     nav.innerHTML += "<ul>";

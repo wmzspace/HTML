@@ -43,7 +43,7 @@
                 if (!times) return;
                 for (let i = 0; i < times; i++) {
                     cookieCount++;
-                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount;//+ ";max-age=2";
+                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount +";max-age=60";
                     readCookies();
                 }
                 document.location.hash = "cookiedata";
@@ -57,7 +57,7 @@
                 document.cookie = "Cookie_" + num + "=" + value;
                 readCookies();
             }
-
+            
             function resetCookies() {
                 var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
                 if (keys) {
