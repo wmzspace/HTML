@@ -33,18 +33,22 @@ function sleep(time) {
     for (let sleep_start = Date.now(); Date.now() - sleep_start < time;);
 }
 function generate_nav() {
-    html = {
+    let html = {
         'docinfo.html': "Document Information",
         'cookie.html': "Cookie Test",
         'domnav.html': "DOM Navigation",
     }
-    var nav = document.getElementById("html_nav");
-    nav.innerHTML += "<ul>";
-    for (key in html) {
-        nav.innerHTML += "<li><a href=" + key + ">" + html[key] + "</a></li>\n";
-    }
-    nav.innerHTML += "</ul>";
-    // nav.getElementsByTagName("ul").style.padding = "0";
+    // $("nav").filter("[id*=html_nav]")[0].innerHTML += $(`<div><ul>${(() => {
+    //     let htmls = "";
+    //     for (key in html)
+    //         htmls += (`<li><a href="${key}"> ${html[key]} </a></li>`);
+    //     return htmls;
+    // })()}</ul></div>`).html();
+    $("nav").filter("[id*=html_nav]")[0].innerHTML += $(`<div><ul>${((htmls="") => {
+        for (key in html)
+            htmls += (`<li><a href="${key}"> ${html[key]} </a></li>`);
+        return htmls;
+    })()}</ul></div>`).html();
 }
 
 
