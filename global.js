@@ -38,17 +38,18 @@ function generate_nav() {
         'cookie.html': "Cookie Test",
         'domnav.html': "DOM Navigation",
     }
-    // $("nav").filter("[id*=html_nav]")[0].innerHTML += $(`<div><ul>${(() => {
-    //     let htmls = "";
+    
+    // $("nav").filter("[id*='html_nav']").append(`<ul>${((htmls = "") => {
     //     for (key in html)
     //         htmls += (`<li><a href="${key}"> ${html[key]} </a></li>`);
     //     return htmls;
-    // })()}</ul></div>`).html();
-    $("nav").filter("[id*=html_nav]")[0].innerHTML += $(`<div><ul>${((htmls="") => {
+    // })()}</ul>`);
+
+    $("nav#html_nav").append(`<ul>${((htmls = "") => {
         for (key in html)
             htmls += (`<li><a href="${key}"> ${html[key]} </a></li>`);
         return htmls;
-    })()}</ul></div>`).html();
+    })()}</ul>`);
 }
 
 
