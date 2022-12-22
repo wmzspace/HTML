@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test</title>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+
+        function println(content) {
+            document.writeln(content);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <pre><script defer id="child">
+            println("Charset: " + document.charset);
+            println("Compat Mode: " + document.compatMode);
+            println("Protocol: " + document.location.protocol);
+            println("Hostname: " + document.location.hostname);
+            println("Port: " + document.location.port);
+            println("Pathname: " + document.location.pathname);
+            println("Search: " + document.location.search);
+            println("Hash: " + document.location.hash);
+            println("URL(location): " + document.location);
+        </script></pre>
+        <!-- <script delay>
+            var child = document.getElementById('child');//  获取子元素
+            var parent = document.createElement('pre');//  新建父元素
+            parent.className = 'parent';
+            child.parentNode.replaceChild(parent, child);//  获取子元素原来的父元素并将新父元素代替子元素
+            parent.appendChild(child);//  在新父元素下添加原来的子元素
+        </script> -->
+
+    </header>
+
+    <main>
+        <button id="toEnd" type="button">Nav To End</button>
+        <div style="min-height: 150px;background-color: antiquewhite;" id="cookiedata"></div>
+        <button id="write" type="button">Add Cookie</button>
+        <button id="update" type="button">Update Cookie</button>
+        <button id="reset" type="button">Reset Cookies</button>
+        <script>
+            var cookieCount = 0;
+            document.getElementById("write").onclick = createCookie;
+            document.getElementById("update").onclick = updateCookie;
+            document.getElementById("reset").onclick = resetCookies;
+            readCookies();
+
+            function readCookies() {
+                document.getElementById("cookiedata").innerHTML = document.cookie;
+            }
+
+            function createCookie() {
+                var times = prompt("Input add how many cookies:");
+                if (!times) return;
+                for (let i = 0; i < times; i++) {
+                    cookieCount++;
+                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount + ";max-age=2";
+                    readCookies();
+                }
+                document.location.hash = "cookiedata";
+            }
+
+            function updateCookie() {
+                // document.cookie="Cookie_" + cookieCount+ "=Updated_" + cookieCount;
+                readCookies();
+            }
+
+            function resetCookies() {
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (keys) {
+                    for (var i = keys.length; i--;)
+                        document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+                }
+                cookieCount = 0;
+                readCookies();
+            }
+
+        </script>
+
+        <pre><script>
+            document.getElementById("toEnd").onclick = function () {
+                document.location.hash = "end";
+                // How to reload onhashchange?
+            }
+
+
+
+
+            // var pre = document.createElement("pre");
+            // var js = document.getElementsByTagName("script");
+            // try {
+            //     for (let i = 0; i < js.length; i++) {
+            //         println(js[i].parentElement.tagName.toLocaleLowerCase());
+            //     }
+            //     println("\nFinish!");
+            // } catch (e) {
+            //     println(e);
+            // }
+            for (let i = 1; i <= 100; i++) {
+                println(i);
+            }
+
+        </script></pre>
+
+    </main>
+
+    <footer id="end">
+        <pre><script>
+            // document.writeln("<pre>")
+            println("Last Modified: " + document.lastModified);
+            // document.write("</pre>")
+        </script>
+        </pre>
+    </footer>
+
+
+
+
+</body>
+
+</html>

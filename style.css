@@ -1,0 +1,24 @@
+h1{
+    font-size: 0.5rem;
+}
+
+ul{
+    font-size: 1px;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+* {
+    scroll-behavior: smooth;
+}
+
+#cookiedata {
+    min-height: 150px;
+    border: thin solid black;
+}
+
+#readyState {
+    color: red;
+}

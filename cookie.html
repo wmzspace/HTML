@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Cookie Test</title>
+    <script src="global.js"></script>
+</head>
+
+<body>
+    <header>
+        <pre>ReadyState: <b id="readyState">loading...</b></pre>
+        <nav>
+            <ul>
+                <li><a href="docinfo.html">Document Information</a></li>
+                <li><a href="cookie.html">Cookie Test</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Cookie Test</h1>
+        <div id="cookiedata"></div>
+        <button id="write" type="button">Add Cookie</button>
+        <button id="update" type="button">Update Cookie</button>
+        <button id="reset" type="button">Reset Cookies</button>
+        <script>
+            var cookieCount = 0;
+            document.getElementById("write").onclick = createCookie;
+            document.getElementById("update").onclick = updateCookie;
+            document.getElementById("reset").onclick = resetCookies;
+            readCookies();
+
+            function readCookies() {
+                document.getElementById("cookiedata").innerHTML = document.cookie;
+            }
+
+            function createCookie() {
+                var times = prompt("Input add how many cookies:");
+                if (!times) return;
+                for (let i = 0; i < times; i++) {
+                    cookieCount++;
+                    document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount +";max-age=60";
+                    readCookies();
+                }
+                document.location.hash = "cookiedata";
+            }
+
+            function updateCookie() {
+                let num = prompt("Change which cookie (Number):");
+                if (!num) return;
+                let value = prompt("Input value:");
+                if (!value) return;
+                document.cookie = "Cookie_" + num + "=" + value;
+                readCookies();
+            }
+            
+            function resetCookies() {
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (keys) {
+                    for (var i = keys.length; i--;)
+                        document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+                }
+                cookieCount = 0;
+                readCookies();
+            }
+
+        </script>
+
+        <!-- <pre><script>
+            document.getElementById("toEnd").onclick = function () {
+                document.location.hash = "end";
+                // How to reload onhashchange?
+            }
+        </script></pre> -->
+    </main>
+    
+    <footer>
+        <pre><script>println("Last Modified: " + document.lastModified);</script></pre>
+    </footer>
+
+</body>
+
+</html>

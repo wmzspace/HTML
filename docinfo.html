@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <title>Document Information</title>
+    <script src="global.js"></script>
+</head>
+
+<body>
+    <header>
+        <pre>ReadyState: <b id="readyState">loading...</b></pre>
+        <nav id="html_nav"></nav>
+        
+        <script>generate_nav();</script>
+    </header>
+
+    <main>
+        <h1>Document Info</h1>
+        <pre><script defer>
+            println("Charset: " + document.charset);
+            println("Compat Mode: " + document.compatMode);
+            println("Protocol: " + document.location.protocol);
+            println("Hostname: " + document.location.hostname);
+            println("Port: " + document.location.port);
+            println("Pathname: " + document.location.pathname);
+            println("Search: " + document.location.search);
+            println("Hash: " + document.location.hash);
+            println("URL(location): " + document.location);
+        </script></pre>
+
+    </main>
+
+    <footer>
+        <pre><script>println("Last Modified: " + document.lastModified);</script></pre>
+    </footer>
+
+</body>
+
+</html>
