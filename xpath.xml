@@ -1,0 +1,7 @@
+<application>
+  <component name="XPathView.XPathViewPlugin">
+    <option name="SEARCH_SCOPE">
+      <SearchScope scope-name="所有位置" />
+    </option>
+  </component>
+</application>
