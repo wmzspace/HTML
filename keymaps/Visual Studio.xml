@@ -10,6 +10,9 @@
   <action id="EditorIncreaseFontSize">
     <mouse-shortcut keystroke="control button143" />
   </action>
+  <action id="Javascript.Linters.EsLint.Fix">
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="f" />
+  </action>
   <action id="MethodDown" />
   <action id="MethodUp" />
   <action id="MoveLineDown">
@@ -17,6 +20,12 @@
   </action>
   <action id="MoveLineUp">
     <keyboard-shortcut first-keystroke="alt up" />
+  </action>
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="ctrl alt enter" />
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl f" />
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="d" />
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl d" />
   </action>
   <action id="ShowContent" />
   <action id="ShowSearchHistory" />
