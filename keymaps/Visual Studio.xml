@@ -30,4 +30,10 @@
   <action id="ShowContent" />
   <action id="ShowSearchHistory" />
   <action id="UsageView.ShowRecentFindUsages" />
+  <action id="pdf.viewer.DecreaseScaleAction">
+    <mouse-shortcut keystroke="control button142" />
+  </action>
+  <action id="pdf.viewer.IncreaseScaleAction">
+    <mouse-shortcut keystroke="control button143" />
+  </action>
 </keymap>
