@@ -1,8 +1,8 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="项目 'backend'" />
-    <option name="defaultScopeName" value="项目 'backend'" />
-    <option name="SEARCH_SCOPE" value="项目 'backend'" />
+    <option name="customScope" value="项目 'frontend'" />
+    <option name="defaultScopeName" value="项目 'frontend'" />
+    <option name="SEARCH_SCOPE" value="项目 'frontend'" />
     <mask>*.css</mask>
     <mask>*.html</mask>
     <mask>*.xml</mask>
